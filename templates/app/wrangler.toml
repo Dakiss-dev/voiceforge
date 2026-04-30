@@ -1,0 +1,20 @@
+name = "voiceforge-app"
+main = "src/index.ts"
+compatibility_date = "2026-04-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Bind your secrets via:
+#   wrangler secret put TWILIO_ACCOUNT_SID
+#   wrangler secret put TWILIO_AUTH_TOKEN
+#   wrangler secret put TWILIO_PHONE_NUMBER
+#   wrangler secret put ANTHROPIC_API_KEY
+#   wrangler secret put SUPABASE_URL
+#   wrangler secret put SUPABASE_SERVICE_ROLE_KEY
+#
+# Or set them in the Cloudflare dashboard under Workers > <name> > Settings > Variables.
+
+[vars]
+# Non-secret config goes here. Override per environment if needed.
+DEFAULT_LANGUAGE = "fr"
+TWILIO_VOICE = "Polly.Lea-Neural"
+TWILIO_VOICE_LANGUAGE = "fr-FR"

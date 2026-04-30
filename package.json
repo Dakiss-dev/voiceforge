@@ -1,6 +1,6 @@
 {
   "name": "voiceforge",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Provider-agnostic AI voice agent scaffolder. Build voice receptionists with any LLM, TTS, phone, runtime, and storage stack.",
   "type": "module",
   "license": "MIT",
@@ -28,12 +28,49 @@
   "engines": {
     "node": ">=20"
   },
+  "exports": {
+    "./core": {
+      "types": "./core/index.ts",
+      "default": "./core/index.ts"
+    },
+    "./adapters/phone/twilio": {
+      "types": "./adapters/phone/twilio/index.ts",
+      "default": "./adapters/phone/twilio/index.ts"
+    },
+    "./adapters/llm/anthropic": {
+      "types": "./adapters/llm/anthropic/index.ts",
+      "default": "./adapters/llm/anthropic/index.ts"
+    },
+    "./adapters/tts/elevenlabs": {
+      "types": "./adapters/tts/elevenlabs/index.ts",
+      "default": "./adapters/tts/elevenlabs/index.ts"
+    },
+    "./adapters/storage/supabase": {
+      "types": "./adapters/storage/supabase/index.ts",
+      "default": "./adapters/storage/supabase/index.ts"
+    }
+  },
   "scripts": {
     "build": "tsc",
+    "typecheck": "tsc --noEmit",
     "lint": "echo \"lint TBD\"",
     "test": "echo \"tests TBD\""
   },
+  "peerDependencies": {
+    "@anthropic-ai/sdk": "^0.30.0",
+    "@supabase/supabase-js": "^2.45.0"
+  },
+  "peerDependenciesMeta": {
+    "@anthropic-ai/sdk": {
+      "optional": true
+    },
+    "@supabase/supabase-js": {
+      "optional": true
+    }
+  },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.30.0",
+    "@supabase/supabase-js": "^2.45.0",
     "typescript": "^5.4.0"
   }
 }

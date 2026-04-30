@@ -175,6 +175,7 @@ export interface StorageProvider {
   saveTranscript(callId: string, entry: TranscriptEntry): Promise<void>
   saveLead(lead: Lead): Promise<void>
   getCall(callId: string): Promise<Call | null>
+  getTranscripts(callId: string): Promise<TranscriptEntry[]>
 }
 
 // ============================================================
@@ -184,13 +185,20 @@ export interface StorageProvider {
 export interface ReceptionistConfig {
   phone: PhoneProvider
   llm: LLMProvider
-  tts: TTSProvider
+  /**
+   * Optional in Phase 1. The default routing in createReceptionist relies on
+   * the phone provider's built-in TTS (e.g. Twilio's <Say> with Polly voices).
+   * Required only when the runtime serves audio URLs back to the phone provider
+   * via <Play> (see Phase 1.5 docs).
+   */
+  tts?: TTSProvider
   /** Optional. Many phone providers have built-in STT. */
   stt?: STTProvider
   storage: StorageProvider
   /**
-   * Map of language code → system prompt. Either a path to a markdown file
-   * or the prompt content directly.
+   * Map of language code → system prompt content.
+   * Pass the prompt string directly (not a path). The user's app is
+   * responsible for loading prompts from disk if they live in files.
    */
   prompts: {
     [language: string]: string
