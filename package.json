@@ -1,0 +1,39 @@
+{
+  "name": "voiceforge",
+  "version": "0.0.1",
+  "description": "Provider-agnostic AI voice agent scaffolder. Build voice receptionists with any LLM, TTS, phone, runtime, and storage stack.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Ali Dakissaga",
+  "homepage": "https://github.com/Dakiss-dev/voiceforge",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dakiss-dev/voiceforge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Dakiss-dev/voiceforge/issues"
+  },
+  "keywords": [
+    "ai-voice-agent",
+    "voice-bot",
+    "ai-receptionist",
+    "claude-code-skill",
+    "twilio",
+    "elevenlabs",
+    "anthropic",
+    "claude",
+    "voice-ai",
+    "phone-agent"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "echo \"lint TBD\"",
+    "test": "echo \"tests TBD\""
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
