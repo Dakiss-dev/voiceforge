@@ -48,7 +48,7 @@ import { supabase } from 'voiceforge/adapters/storage/supabase'
 
 export default createReceptionist({
   phone: twilio({ accountSid: env.TWILIO_SID, authToken: env.TWILIO_TOKEN }),
-  llm: anthropic({ apiKey: env.ANTHROPIC_KEY, model: 'claude-sonnet-4-6' }),
+  llm: anthropic({ apiKey: env.ANTHROPIC_KEY, model: 'claude-sonnet-5' }),
   tts: elevenlabs({ apiKey: env.ELEVENLABS_KEY, voiceId: env.VOICE_ID }),
   storage: supabase({ url: env.SUPABASE_URL, key: env.SUPABASE_KEY }),
   prompts: { fr: './prompts/fr.md', en: './prompts/en.md' },
@@ -57,18 +57,19 @@ export default createReceptionist({
 
 See [ARCHITECTURE.md](./ARCHITECTURE.md) for the full vision.
 
-## Status
+## Status: walking prototype (honest version)
 
-- **Phase 1 (in progress)**: Interfaces + reference adapters (Twilio, Claude, ElevenLabs, Deepgram, Supabase, Cloudflare Workers)
-- **Phase 2**: Booking + SMS + additional adapters (OpenAI, Gemini, Cartesia, Vercel, Postgres, Telnyx, LiveKit Agents)
+**Working today:** the core interfaces (`PhoneProvider`, `LLMProvider`, `TTSProvider`, `STTProvider`, `StorageProvider`), four reference adapters (Twilio, Anthropic Claude, ElevenLabs, Supabase), and the Cloudflare Worker app template.
+
+**Not built yet:** the Deepgram STT adapter and the Cloudflare runtime adapter (interfaces defined, implementations stubbed). No test suite yet.
+
+I ship production voice agents with this exact stack for real businesses. VoiceForge is that architecture, extracted and opened. Issues and PRs welcome.
 
 ## Why I'm building this
 
-I'm Ali Dakissaga. I build AI-native systems in Claude Code. VoiceForge is my open-source flagship: proof you don't need to pay $497/mo to HighLevel to have a voice agent that works.
+I'm Ali Dakissaga. I build production AI agent systems: multilingual voice receptionists, agent harnesses, and the full-stack systems around them. VoiceForge is that architecture, open-sourced: proof you don't need to lock yourself into a platform to have a voice agent that works.
 
 - GitHub: [@Dakiss-dev](https://github.com/Dakiss-dev)
-- YouTube: (coming soon)
-- Skool community: (coming soon)
 
 ## Contributing
 

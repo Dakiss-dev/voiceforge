@@ -48,7 +48,7 @@ import { supabase } from 'voiceforge/adapters/storage/supabase'
 
 export default createReceptionist({
   phone: twilio({ accountSid: env.TWILIO_SID, authToken: env.TWILIO_TOKEN }),
-  llm: anthropic({ apiKey: env.ANTHROPIC_KEY, model: 'claude-sonnet-4-6' }),
+  llm: anthropic({ apiKey: env.ANTHROPIC_KEY, model: 'claude-sonnet-5' }),
   tts: elevenlabs({ apiKey: env.ELEVENLABS_KEY, voiceId: env.VOICE_ID }),
   storage: supabase({ url: env.SUPABASE_URL, key: env.SUPABASE_KEY }),
   prompts: { fr: './prompts/fr.md', en: './prompts/en.md' },
@@ -57,18 +57,19 @@ export default createReceptionist({
 
 Voir [ARCHITECTURE.md](./ARCHITECTURE.md) pour la vision complète.
 
-## Statut
+## Statut : prototype qui marche (version honnête)
 
-- **Phase 1 (en cours)** : Interfaces + adaptateurs de référence (Twilio, Claude, ElevenLabs, Deepgram, Supabase, Cloudflare Workers)
-- **Phase 2** : Booking + SMS + adaptateurs additionnels (OpenAI, Gemini, Cartesia, Vercel, Postgres, Telnyx, LiveKit Agents)
+**Fonctionne aujourd'hui :** les interfaces du core (`PhoneProvider`, `LLMProvider`, `TTSProvider`, `STTProvider`, `StorageProvider`), quatre adaptateurs de référence (Twilio, Anthropic Claude, ElevenLabs, Supabase) et le template d'app Cloudflare Worker.
+
+**Pas encore construit :** l'adaptateur Deepgram (STT) et l'adaptateur runtime Cloudflare (interfaces définies, implémentations stubbed). Pas encore de suite de tests.
+
+Je ship des agents vocaux en production avec exactement cette stack pour de vraies entreprises. VoiceForge, c'est cette architecture, extraite et ouverte. Issues et PRs bienvenues.
 
 ## Pourquoi je build ça
 
-Je suis Ali Dakissaga. Je construis des trucs IA-natifs en Claude Code. VoiceForge est mon flagship open-source : la preuve qu'on n'a plus besoin de payer 497$/mo à HighLevel pour avoir un agent vocal qui marche.
+Je suis Ali Dakissaga. Je construis des systèmes d'agents IA en production : réceptionnistes vocaux multilingues, harnais d'agents, systèmes full-stack. VoiceForge est cette architecture, en open source : la preuve qu'on n'a pas besoin de se lock-in dans une plateforme pour avoir un agent vocal qui marche.
 
 - GitHub : [@Dakiss-dev](https://github.com/Dakiss-dev)
-- YouTube : (à venir)
-- Communauté Skool : (à venir)
 
 ## Contribuer
 
