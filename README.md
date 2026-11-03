@@ -63,11 +63,11 @@ Voir [ARCHITECTURE.md](./ARCHITECTURE.md) pour la vision complète.
 
 **Pas encore construit :** l'adaptateur Deepgram (STT) et l'adaptateur runtime Cloudflare (interfaces définies, implémentations stubbed). Pas encore de suite de tests.
 
-Je ship des agents vocaux en production avec exactement cette stack pour de vraies entreprises. VoiceForge, c'est cette architecture, extraite et ouverte. Issues et PRs bienvenues.
+VoiceForge, c'est l'architecture derrière mon travail sur les agents vocaux, extraite et ouverte. Issues et PRs bienvenues.
 
 ## Pourquoi je build ça
 
-Je suis Ali Dakissaga. Je construis des systèmes d'agents IA en production : réceptionnistes vocaux multilingues, harnais d'agents, systèmes full-stack. VoiceForge est cette architecture, en open source : la preuve qu'on n'a pas besoin de se lock-in dans une plateforme pour avoir un agent vocal qui marche.
+Je suis Ali Dakissaga. Je construis des produits full-stack et des agents IA : agents vocaux, harnais d'agents, et les systèmes autour. VoiceForge est cette architecture vocale, en open source : la preuve qu'on n'a pas besoin de se lock-in dans une plateforme pour avoir un agent vocal qui marche.
 
 - GitHub : [@Dakiss-dev](https://github.com/Dakiss-dev)
 

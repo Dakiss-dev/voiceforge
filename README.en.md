@@ -63,11 +63,11 @@ See [ARCHITECTURE.md](./ARCHITECTURE.md) for the full vision.
 
 **Not built yet:** the Deepgram STT adapter and the Cloudflare runtime adapter (interfaces defined, implementations stubbed). No test suite yet.
 
-I ship production voice agents with this exact stack for real businesses. VoiceForge is that architecture, extracted and opened. Issues and PRs welcome.
+VoiceForge is the architecture behind my voice-agent work, extracted and opened. Issues and PRs welcome.
 
 ## Why I'm building this
 
-I'm Ali Dakissaga. I build production AI agent systems: multilingual voice receptionists, agent harnesses, and the full-stack systems around them. VoiceForge is that architecture, open-sourced: proof you don't need to lock yourself into a platform to have a voice agent that works.
+I'm Ali Dakissaga. I build full-stack products and AI agents: voice agents, agent harnesses, and the systems around them. VoiceForge is that voice architecture, open-sourced: proof you don't need to lock yourself into a platform to have a voice agent that works.
 
 - GitHub: [@Dakiss-dev](https://github.com/Dakiss-dev)
 
